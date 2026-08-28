@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffaf7;
+  --foreground: #FFEAD0; /* site text color requested */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-geist-mono);
+}
+@import "tailwindcss";
+
+:root {
+  --background: #fffaf7;
+  --foreground: #1c1917;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), serif;
+  letter-spacing: 0.01em;
+}
+
+button, a, nav, input, textarea, select {
+  font-family: var(--font-body), sans-serif;
+}
+
+/* Force all text to the requested foreground color */
+body, body * {
+  color: #67461e !important;
+}
+
+::selection {
+  background: #fbcfe8;
+  color: #111827;
+}
+
+/* Minimal UI overrides: restore simpler look with black text and reduced shadows */
+.card-glass {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+  backdrop-filter: none;
+}
+
+.btn-brand {
+  background:rgb(177 85 43);
+  color: #ffffff !important;
+  border-radius: 9999px;
+  padding: 0.6rem 1.25rem;
+  box-shadow: none;
+}
+
+.text-white {
+    color: var(--color-white) !important;
+}
+
+.hero-video,
+.hero-video * {
+  color: #ffffff !important;
+}
+
+.gallery-item { transition: transform .25s ease, box-shadow .25s ease; }
+.gallery-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(2,6,23,0.05); }
+
+.hero-image { box-shadow: 0 10px 30px rgba(15,23,42,0.05) !important; }
+
+/* Lighten modal background slightly */
+.fixed.inset-0 { background: rgba(0,0,0,0.65); }
+
+/* Testimonials marquee slider */
+.marquee { --speed: 28s; padding: 0.5rem 0; }
+.marquee-track { display: flex; align-items: stretch; gap: 2rem; animation: marquee var(--speed) linear infinite; }
+.marquee-item { flex: 0 0 auto; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Styling for testimonial cards */
+.marquee-item { border: 1px solid rgba(0,0,0,0.06); background: linear-gradient(180deg,#ffffff,#fffaf7); }
+.marquee-item svg { color: #d48a2f; }
+.marquee-item p { color: #1c1917; }
+.marquee-item .text-stone-600 { color: rgba(28,25,23,0.6); }
+
+@media (max-width: 640px) {
+  .marquee {
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .marquee::-webkit-scrollbar {
+    display: none;
+  }
+
+  .marquee-track {
+    animation: none;
+    display: flex;
+    width: max-content;
+    min-width: max-content;
+  }
+
+  .marquee-item {
+    min-width: 280px;
+    max-width: 82vw;
+    margin-bottom: 0;
+    flex: 0 0 auto;
+  }
+}
+

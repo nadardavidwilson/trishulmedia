@@ -20,8 +20,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aurelia Studio | Pre-Wedding Gallery",
-  description: "An elegant pre-wedding shoot website featuring a cinematic lightbox gallery.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL
+      ? process.env.NEXT_PUBLIC_SITE_URL
+      : process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+        : "http://localhost:3000",
+  ),
+  title: {
+    default: "Trishul Media & Films | Cinematic Photography",
+    template: "%s | Trishul Media & Films",
+  },
+  description:
+    "Trishul Media & Films captures pre-weddings, maternity sessions and small events with cinematic storytelling.",
+  keywords: [
+    "Trishul Media & Films",
+    "pre-wedding photography",
+    "maternity photography",
+    "event photography",
+    "cinematic photography",
+  ],
+  authors: [{ name: "Trishul Media & Films" }],
+  creator: "Trishul Media & Films",
+  icons: {
+    icon: [{ url: "/logo.jpg", type: "image/jpeg" }],
+    apple: [{ url: "/logo.jpg", type: "image/jpeg" }],
+  },
+  openGraph: {
+    title: "Trishul Media & Films | Cinematic Photography",
+    description:
+      "Cinematic pre-wedding, maternity and small event photography by Trishul Media & Films.",
+    siteName: "Trishul Media & Films",
+    type: "website",
+    images: [{ url: "/logo.jpg", width: 1080, height: 1080, alt: "Trishul Media & Films logo" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Trishul Media & Films | Cinematic Photography",
+    description:
+      "Cinematic pre-wedding, maternity and small event photography by Trishul Media & Films.",
+    images: ["/logo.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,27 +1,9 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "trishulmediav1",
   "compatibility_date": "2026-08-28",
   "compatibility_flags": ["nodejs_compat"],
-  "observability": { "enabled": true },
-  "name": "trishulmediav1",
-  "main": "dist/server/index.js",
-  "assets": {
-    "directory": "dist/client",
-    "binding": "ASSETS"
-  },
-  "limits": {
-    "cpu_ms": 30000
-  },
-  "cache": {
+  "observability": {
     "enabled": true
-  },
-  "images": {
-    "binding": "IMAGES"
-  },
-  "kv_namespaces": [
-    {
-      "binding": "VINEXT_KV_CACHE",
-      "id": "b202cf0b38c9435fb7512bf52d3dc30a"
-    }
-  ]
+  }
 }

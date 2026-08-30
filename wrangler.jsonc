@@ -5,6 +5,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": "./.vinext/build/client",
+        "binding": "ASSETS",
     "not_found_handling": "single-page-application"
   },
   "observability": {

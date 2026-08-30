@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 :root {
   --background: #fffaf7;
   --foreground: #FFEAD0; /* site text color requested */
@@ -8,15 +6,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-body);
-  --font-display: var(--font-display);
-  --font-mono: var(--font-geist-mono);
-}
-@import "tailwindcss";
-
-:root {
-  --background: #fffaf7;
-  --foreground: #1c1917;
 }
 
 @theme inline {

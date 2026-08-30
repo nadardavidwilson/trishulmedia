@@ -2,6 +2,7 @@
   --background: #fffaf7;
   --foreground: #FFEAD0; /* site text color requested */
 }
+@import "tailwindcss";
 
 @theme inline {
   --color-background: var(--background);
@@ -125,4 +126,3 @@ body, body * {
     flex: 0 0 auto;
   }
 }
-
